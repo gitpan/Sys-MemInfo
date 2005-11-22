@@ -1,0 +1,30 @@
+Sys/MemInfo version 0.01
+========================
+
+This module return the total amount of free and used physical memory
+in bytes in totalmem and freemem variables.
+
+This module has been tested on Linux, OpenUnix, AIX5 and OpenBSD.
+
+It should work on Solaris and others *bsd systems like FreeBSD and NetBSD.
+
+INSTALLATION
+
+To install this module type the following:
+
+   perl Makefile.PL
+   make
+   make install
+
+DEPENDENCIES
+
+This module requires these other modules and libraries:
+
+  File::Copy
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2005 Sylvain Cresto <scresto _at_ gmail.com>
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself. 
