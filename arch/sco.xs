@@ -10,6 +10,7 @@ MODULE = Sys::MemInfo PACKAGE = Sys::MemInfo
 
 double
 totalmem()
+	PROTOTYPE: DISABLE
 	CODE:
 		const long long pages = sysconf (_SC_USEABLE_MEMORY);
 		const long long pagesize = sysconf (_SC_PAGESIZE);
@@ -19,6 +20,7 @@ totalmem()
 
 double
 freemem()
+	PROTOTYPE: DISABLE
 	CODE:
 		const long pagesize = sysconf (_SC_PAGESIZE);
 		long freepages = 0;

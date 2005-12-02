@@ -11,6 +11,7 @@ MODULE = Sys::MemInfo PACKAGE = Sys::MemInfo
 
 u_longlong_t
 totalmem()
+	PROTOTYPE: DISABLE
 	perfstat_memory_total_t meminfo;
 	u_longlong_t totalmem = 0;
         CODE:
@@ -23,6 +24,7 @@ totalmem()
 
 u_longlong_t
 freepages()
+	PROTOTYPE: DISABLE
 	perfstat_memory_total_t meminfo;
 	u_longlong_t freemem = 0;
 	CODE:

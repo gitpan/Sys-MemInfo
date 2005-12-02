@@ -1,10 +1,10 @@
-Sys/MemInfo version 0.01
+Sys/MemInfo version 0.02
 ========================
 
 This module return the total amount of free and used physical memory
 in bytes in totalmem and freemem variables.
 
-This module has been tested on Linux, OpenUnix, AIX5 and OpenBSD.
+This module has been tested on Linux, OpenUnix, AIX5, OpenBSD and HPUX11.
 
 It should work on Solaris and others *bsd systems like FreeBSD and NetBSD.
 

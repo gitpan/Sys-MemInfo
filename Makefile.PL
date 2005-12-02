@@ -3,6 +3,7 @@ use ExtUtils::MakeMaker qw(prompt WriteMakefile);
 use File::Copy 'copy';
 
 my $libs = '';
+my $define = '';
 
 for ($^O) {
   if (/svr/) {
@@ -16,6 +17,9 @@ for ($^O) {
     copy ('arch/generic_unix.xs', 'MemInfo.xs');
   } elsif (/bsd/) {
     copy ('arch/bsd.xs', 'MemInfo.xs');
+  } elsif (/hpux/) {
+    copy ('arch/hpux.xs', 'MemInfo.xs');
+    $define ='-D_XOPEN_SOURCE_EXTENDED';
   } else {
     die "unsupported OS: $_\n";
   }
