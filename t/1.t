@@ -1,17 +1,11 @@
-# Before `make install' is performed this script should be runnable with
-# `make test'. After `make install' it should work as `perl 1.t'
+use strict;
+use warnings;
 
-#########################
+use Test::More tests => 4;
 
-# change 'tests => 1' to 'tests => last_test_to_print';
+use_ok "Sys::MemInfo";
 
-use Test;
-BEGIN { plan tests => 1 };
-use Sys::MemInfo;
-ok(1); # If we made it this far, we're ok.
-
-#########################
-
-# Insert your test code below, the Test::More module is use()ed here so read
-# its man page ( perldoc Test::More ) for help writing this test script.
-
+my ($tm, $fm);
+ok ($tm = Sys::MemInfo::totalmem (), "Total Memory");
+ok ($fm = Sys::MemInfo::freemem (),  "Free  Memory");
+ok ($fm <= $tm, "Free ($fm) <= Total ($tm)");

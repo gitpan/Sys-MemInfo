@@ -12,7 +12,11 @@ our @ISA = qw(Exporter DynaLoader);
 # Do not simply export all your public functions/methods/constants.
 our @EXPORT = qw(
 );
-our $VERSION = 0.02;
+our @EXPORT_OK = qw(
+totalmem
+freemem
+);
+our $VERSION = 0.03;
 bootstrap Sys::MemInfo $VERSION;
 
 =pod
@@ -30,9 +34,9 @@ Sys::MemInfo - Memory informations
 
 Sys::MemInfo return the total amount of free and used physical memory in bytes in totalmem and freemem variables.
 
-This module has been tested on Linux, OpenUnix, AIX5, OpenBSD and HPUX11.
+This module has been tested on Linux, OpenUnix, AIX5, OpenBSD, HPUX11 and Windows XP.
 
-It should work on Solaris and others *bsd systems like FreeBSD and NetBSD.
+It should work on Solaris, Windows Server 2003 and others *bsd systems like FreeBSD and NetBSD.
 
 =head1 AUTHOR
 

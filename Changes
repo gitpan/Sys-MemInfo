@@ -5,3 +5,7 @@ Revision history for Perl extension Sys::MemInfo.
 
 0.02  Fri Dec 02 03:08:00 2005
         - added HPUX11 support
+
+0.03  Tue Dec 06 02:36:00 2005
+        - added WinXP and Windows Server 2003 support
+        - added real test, thanks H. Merijn Brand
