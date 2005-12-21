@@ -20,9 +20,12 @@ for ($^O) {
   } elsif (/hpux/) {
     copy ('arch/hpux.xs', 'MemInfo.xs');
     $define ='-D_XOPEN_SOURCE_EXTENDED';
+  } elsif (/dec_osf/) {
+    copy ('arch/tru64.xs', 'MemInfo.xs');
+    $libs='-lmach';
   } elsif (/MSWin32/) {
-	copy('arch/win32.xs', 'MemInfo.xs');
-	$libs='-lpsapi';
+    copy('arch/win32.xs', 'MemInfo.xs');
+    $libs='-lpsapi';
   } else {
     die "unsupported OS: $_\n";
   }

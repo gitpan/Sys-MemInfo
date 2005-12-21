@@ -16,7 +16,7 @@ our @EXPORT_OK = qw(
 totalmem
 freemem
 );
-our $VERSION = 0.03;
+our $VERSION = 0.04;
 bootstrap Sys::MemInfo $VERSION;
 
 =pod
@@ -34,7 +34,7 @@ Sys::MemInfo - Memory informations
 
 Sys::MemInfo return the total amount of free and used physical memory in bytes in totalmem and freemem variables.
 
-This module has been tested on Linux, OpenUnix, AIX5, OpenBSD, HPUX11 and Windows XP.
+This module has been tested on Linux, OpenUnix, AIX5, OpenBSD, HPUX11, Tru64 5.1 and Windows XP.
 
 It should work on Solaris, Windows Server 2003 and others *bsd systems like FreeBSD and NetBSD.
 

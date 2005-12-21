@@ -9,3 +9,6 @@ Revision history for Perl extension Sys::MemInfo.
 0.03  Tue Dec 06 02:36:00 2005
         - added WinXP and Windows Server 2003 support
         - added real test, thanks H. Merijn Brand
+
+0.04  Wed Dec 21 02:08:00 2005
+        - added Tru64 support
