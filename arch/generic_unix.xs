@@ -11,8 +11,8 @@ double
 totalmem()
 	PROTOTYPE: DISABLE
 	CODE:
-		const long pagetotal = sysconf (_SC_PHYS_PAGES);
-		const long pagesize = sysconf (_SC_PAGESIZE);
+		const long long pagetotal = sysconf (_SC_PHYS_PAGES);
+		const long long pagesize = sysconf (_SC_PAGESIZE);
 		double ret = (pagetotal *pagesize);
 		RETVAL = ret;
 	OUTPUT:
@@ -22,8 +22,8 @@ double
 freemem()
 	PROTOTYPE: DISABLE
 	CODE:
-		const long pagesize = sysconf (_SC_PAGESIZE);
-		const long pageavail = sysconf (_SC_AVPHYS_PAGES);
+		const long long pagesize = sysconf (_SC_PAGESIZE);
+		const long long pageavail = sysconf (_SC_AVPHYS_PAGES);
 		double ret= (pageavail * pagesize);
 		RETVAL = ret;
 	OUTPUT:

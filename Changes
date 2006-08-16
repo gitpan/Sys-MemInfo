@@ -12,3 +12,7 @@ Revision history for Perl extension Sys::MemInfo.
 
 0.04  Wed Dec 21 02:08:00 2005
         - added Tru64 support
+
+0.05  Wed Aug 16 23:14:32 2006
+        - fixed wrong memory report (long overflow on linux)
+          thanks Laurent Dufour <dufour_l _at_ hotmail.com>

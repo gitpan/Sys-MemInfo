@@ -16,7 +16,7 @@ our @EXPORT_OK = qw(
 totalmem
 freemem
 );
-our $VERSION = 0.04;
+our $VERSION = 0.05;
 bootstrap Sys::MemInfo $VERSION;
 
 =pod
@@ -65,7 +65,7 @@ USA
 
 =head1 COPYRIGHT
 
-Copyright (C) 2005 - Sylvain Cresto
+Copyright (C) 2005, 2006 - Sylvain Cresto
 
 =cut
 

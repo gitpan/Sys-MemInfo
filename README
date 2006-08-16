@@ -1,4 +1,4 @@
-Sys/MemInfo version 0.04
+Sys/MemInfo version 0.05
 ========================
 
 This module return the total amount of free and used physical memory
@@ -30,7 +30,7 @@ This module requires these other modules and libraries:
 
 COPYRIGHT AND LICENCE
 
-Copyright (C) 2005 Sylvain Cresto <scresto _at_ gmail.com>
+Copyright (C) 2005, 2006 Sylvain Cresto <scresto _at_ gmail.com>
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself. 
