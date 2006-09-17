@@ -4,26 +4,28 @@
 
 MODULE = Sys::MemInfo PACKAGE = Sys::MemInfo
 
+#include "arch/functions.h"
 #include <stdio.h>
 #include <unistd.h>
-#include <sys/sysi86.h>
+#include <sys/sysinfo.h>
 
 void
 availkeys()
-        PREINIT:
-        PPCODE:
+	PREINIT:
+	PPCODE:
                 XPUSHs(sv_2mortal(newSVpv(_totalmem, strlen(_totalmem))));
                 XPUSHs(sv_2mortal(newSVpv(_freemem, strlen(_freemem))));
                 XPUSHs(sv_2mortal(newSVpv(_totalswap, strlen(_totalswap))));
                 XPUSHs(sv_2mortal(newSVpv(_freeswap, strlen(_freeswap))));
-
+  
 double
 totalmem()
 	PROTOTYPE: DISABLE
 	CODE:
-		const long long pages = sysconf (_SC_USEABLE_MEMORY);
+		const long long pagetotal = sysconf (_SC_PHYS_PAGES);
 		const long long pagesize = sysconf (_SC_PAGESIZE);
-		RETVAL = (pages * pagesize);
+		double ret = (pagetotal *pagesize);
+		RETVAL = ret;
 	OUTPUT:
 		RETVAL
 
@@ -31,29 +33,9 @@ double
 freemem()
 	PROTOTYPE: DISABLE
 	CODE:
-		const long pagesize = sysconf (_SC_PAGESIZE);
-		long freepages = 0;
-		long l1=0;
-		long l2=0;
-		double ret = 0;
-		int kmem;
-		if (getksym("mem_freepages", &l1, &l2) != -1) {
-
-			if ((kmem = open("/dev/kmem", O_RDONLY)) != -1 && lseek(kmem, l1, SEEK_SET)  != -1 &&
-				read(kmem, &freepages, sizeof(freepages)) == -1) {
-				ret = (freepages * pagesize);
-			}
-			close(kmem);
-		}
-		RETVAL = ret;
-	OUTPUT:
-		RETVAL
-
-double
-freeswap()
-	PROTOTYPE: DISABLE
-	CODE:
-		double ret = 0;
+		const long long pagesize = sysconf (_SC_PAGESIZE);
+		const long long pageavail = sysconf (_SC_AVPHYS_PAGES);
+		double ret= (pageavail * pagesize);
 		RETVAL = ret;
 	OUTPUT:
 		RETVAL
@@ -62,7 +44,28 @@ double
 totalswap()
 	PROTOTYPE: DISABLE
 	CODE:
-		double ret = 0;
+		struct sysinfo info;
+		double ret= 0;
+#ifdef OLDKERNEL
+		if (0==sysinfo(&info)) ret = info.totalswap;
+#else
+		if (0==sysinfo(&info)) ret = info.mem_unit * info.totalswap;
+#endif
+		RETVAL = ret;
+	OUTPUT:
+		RETVAL
+
+double
+freeswap()
+	PROTOTYPE: DISABLE
+	CODE:
+		struct sysinfo info;
+		double ret= 0;
+#ifdef OLDKERNEL
+		if (0==sysinfo(&info)) ret = info.freeswap;
+#else
+		if (0==sysinfo(&info)) ret = info.mem_unit * info.freeswap;
+#endif
 		RETVAL = ret;
 	OUTPUT:
 		RETVAL
