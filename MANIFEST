@@ -1,4 +1,5 @@
 arch/freebsd.xs
+arch/darwin.xs
 arch/irix.xs
 arch/hpux.xs
 arch/tru64.xs

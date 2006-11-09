@@ -1,7 +1,7 @@
 Revision history for Perl extension Sys::MemInfo.
 
 0.01  Thu Oct 24 01:10:47 2005
-	- original version
+    - original version
 
 0.02  Fri Dec 02 03:08:00 2005
     - added HPUX11 support
@@ -17,7 +17,7 @@ Revision history for Perl extension Sys::MemInfo.
     - fixed wrong memory report (long overflow on linux)
       thanks Laurent Dufour <dufour_l _at_ hotmail.com>
 
-0.90  Sun Sep 17 10:24:59 20069 2006
+0.90  Sun Sep 17 10:24:59 2006
     - added win 9x/ME/NT support
     - use GlobalMemoryStatusEx with WinXP, no longuer
       depend on psapi.dll
@@ -27,3 +27,8 @@ Revision history for Perl extension Sys::MemInfo.
       thanks Wilson Snyder <wsnyder _at_ wsynder.org>
     - debug *bsd support
     - added Irix support
+
+0.91  Thu Nov 09 23:49:00 2006
+    - added Mac OS X Darwin support
+    - debug freebsd support
+    - patch test script, thanks Wilson Snyder

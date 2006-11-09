@@ -65,6 +65,9 @@ for ($^O) {
   } elsif (/irix/) {
     copy('arch/irix.xs', 'MemInfo.xs');
     print "Sys::MemInfo for Irix\n";
+  } elsif (/darwin/) {
+    copy('arch/darwin.xs', 'MemInfo.xs');
+    print "Sys::MemInfo for MacOS X Darwin\n";
   } else {
     die "unsupported OS: $_\n";
   }

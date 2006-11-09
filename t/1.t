@@ -14,8 +14,9 @@ my $n = 0;
 use Data::Dumper;
 foreach my $key (Sys::MemInfo::availkeys()) {
   my $value = Sys::MemInfo::get($key);
-  printf "  Key %-20s = %s MB\n", $key, (defined $value ? int($value/1024/1024) : "undef");
-  printf "  Key %-20s = %s MB\n", $key, (defined $value ? int($value/1024) : "undef");
+  printf +("  Key %-20s = %7s MB = %10s kB\n", $key,
+    (defined $value ? int($value/1024/1024) : "undef"),
+    (defined $value ? int($value/1024) : "undef"));
   $n++;
 }
 

@@ -20,7 +20,7 @@ freeswap
 availkeys
 get
 );
-our $VERSION = 0.90;
+our $VERSION = 0.91;
 bootstrap Sys::MemInfo $VERSION;
 
 sub get {
@@ -50,7 +50,7 @@ Sys::MemInfo return the total amount of free and used physical memory in bytes i
 Total amount of free and user swap memory are alse returned in totalswap and freeswap variables.
 
 This module has been tested on Linux 2.6.10, UnixWare 7.1.2, AIX5, OpenBSD 3.8, 
-NetBSD 2.0.2, FreBSD 5.4, HPUX11, Solaris 9, Tru64 5.1, Irix 6.5 and Windows XP.
+NetBSD 2.0.2, FreBSD 5.4, HPUX11, Solaris 9, Tru64 5.1, Irix 6.5, Mac OS X 10.2 darwin and Windows XP.
 
 It should work on FreeBSD 4 and Windows 9X/ME/NT/200X/Vista.
 
@@ -90,6 +90,8 @@ Returns total swap space in bytes.
 
 Sylvain Cresto E<lt>scresto@gmail.comE<gt>
 
+Thanks to Laurent Dufour and Wilson Snyder.
+
 =head1 BUGS
 
 Please send bug-reports to scresto@gmail.com
@@ -114,8 +116,6 @@ USA
 =head1 COPYRIGHT
 
 Copyright (C) 2005, 2006 - Sylvain Cresto
-
-Thanks to Laurent Dufour and Wilson Snyder.
 
 =cut
 
