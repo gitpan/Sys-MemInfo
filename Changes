@@ -32,3 +32,8 @@ Revision history for Perl extension Sys::MemInfo.
     - added Mac OS X Darwin support
     - debug freebsd support
     - patch test script, thanks Wilson Snyder
+
+0.98  Wed Sep 14 22:55:00 2014
+    - added cygwin support (RT #85152), thanks <kqfhjjgrn _at_ yahoo.es>
+    - RT #80636
+    - fixed pod abstract (RT #94160), thanks <NEILB _at_ cpan.org>

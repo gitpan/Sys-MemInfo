@@ -40,7 +40,7 @@ double
 freemem()
 	PROTOTYPE: DISABLE
 	CODE:
-		unsigned long fmem;
+		unsigned long fmem = 0;
 		double ret = 0;
 		size_t len = sizeof (fmem);
 		static int pagesize = 0;

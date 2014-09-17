@@ -20,7 +20,7 @@ freeswap
 availkeys
 get
 );
-our $VERSION = 0.91;
+our $VERSION = 0.98;
 bootstrap Sys::MemInfo $VERSION;
 
 sub get {
@@ -29,9 +29,9 @@ sub get {
   return &{$field};
 }
 
-=pod
+=head1 NAME
 
-Sys::MemInfo - Memory informations
+Sys::MemInfo - query the total free and used physical memory
 
 =head1 SYNOPSIS
 
@@ -49,7 +49,7 @@ Sys::MemInfo return the total amount of free and used physical memory in bytes i
 
 Total amount of free and user swap memory are alse returned in totalswap and freeswap variables.
 
-This module has been tested on Linux 2.6.10, UnixWare 7.1.2, AIX5, OpenBSD 3.8, 
+This module has been tested on Linux 3.13.0, UnixWare 7.1.2, AIX5, OpenBSD 3.8, 
 NetBSD 2.0.2, FreBSD 5.4, HPUX11, Solaris 9, Tru64 5.1, Irix 6.5, Mac OS X 10.2 darwin and Windows XP.
 
 It should work on FreeBSD 4 and Windows 9X/ME/NT/200X/Vista.
@@ -99,23 +99,11 @@ Please send bug-reports to scresto@gmail.com
 =head1 LICENCE
 
 This library is free software; you can redistribute it and/or modify
-it under the terms of the GNU Lesser General Public License as
-published by the Free Software Foundation; either version 2.1 of the
-License, or (at your option) any later version.
-
-This library is distributed in the hope that it will be useful, but
-WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-Lesser General Public License for more details.
-
-You should have received a copy of the GNU Lesser General Public
-License along with this library; if not, write to the Free Software
-Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307
-USA
+it under the same terms as Perl itself. 
 
 =head1 COPYRIGHT
 
-Copyright (C) 2005, 2006 - Sylvain Cresto
+Copyright (C) 2005, 2006, 2014 - Sylvain Cresto
 
 =cut
 

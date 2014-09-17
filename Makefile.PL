@@ -13,7 +13,7 @@ for ($^O) {
     copy ('arch/aix.xs', 'MemInfo.xs');
     $libs = '-lperfstat';
     print "Sys::MemInfo for AIX\n";
-  } elsif (/linux/) {
+  } elsif (/linux/ or /cygwin/) {
     copy ('arch/linux.xs', 'MemInfo.xs');
     my $kver = `uname -r`;
     die "Error extracting kernel version.\n" unless ($kver =~ /^(\d+)\.(\d+)\.(\d+)/);
